@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """
 Django settings for testdj project.
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'TestModel'
 ]
 
 MIDDLEWARE = [
@@ -71,12 +73,20 @@ WSGI_APPLICATION = 'testdj.wsgi.application'
 
 
 # Database
+# 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
+        'NAME': 'python_test',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
 
